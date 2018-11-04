@@ -3,8 +3,8 @@ const nightmare = Nightmare({ show: true, typeInterval: 30 })
 
 nightmare
   .goto('https://www.messenger.com/t/100005576054730')
-  .type('#email', 'philipp.eibl@outlook.com')
-  .type('#pass', 'Styria18')
+  .type('#email', process.env.npm_config_username)
+  .type('#pass', process.env.npm_config_password)
   .click('#loginbutton')
   .wait(5000)
   .type('body', 'hello, how are you Ray\u000d')
